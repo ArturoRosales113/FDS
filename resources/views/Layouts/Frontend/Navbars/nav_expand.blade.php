@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-white fixed-top navbar-transparent" color-on-scroll="500">
+<nav class="navbar navbar-expand-lg bg-white fixed-top navbar-transparent" color-on-scroll="100">
 	<div class="container">
 
 		<div class="dropdown button-dropdown">
@@ -21,7 +21,7 @@
 
 
 		<div class="navbar-translate">
-			<a class="navbar-brand" href="{{route ('front.index')}}" rel="tooltip" title="" data-placement="bottom" target="_blank" data-original-title="Designed by Invision. Coded by Creative Tim">
+			<a class="navbar-brand" href="{{route ('front.index')}}" rel="tooltip" title="" data-placement="bottom" data-original-title="Designed by Invision. Coded by Creative Tim">
 				Food Delivery System
 			</a>
 
@@ -37,50 +37,64 @@
 
 
 				<li class="nav-item">
-					<a class="nav-link" href="../index.html" target="_blank">
+					<a class="nav-link" href="../index.html">
 						<i class="now-ui-icons design_app"></i>
 						<p>Nosotros</p>
 					</a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="" target="_blank">
+					<a class="nav-link" href="">
 						<p>Carta</p>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="" target="_blank">
+					<a class="nav-link" href="">
 						<p>Contacto</p>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link btn btn-primary" href="{{route('login')}}" target="_blank">
-						<p>Iniciar Sesión</p>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link btn btn-primary" href="{{route('register')}}" target="_blank">
-						<p>Registrarse</p>
-					</a>
-				</li>
+		@if (Auth::check())
+			<li class="nav-item">
+<a class="nav-link" href="#"
+onclick="event.preventDefault();
+			document.getElementById('logout-form').submit();">
+Cerrar Sesión
+</a>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+{{ csrf_field() }}
+</form>
+</li>
+
+	@else
+		<li class="nav-item">
+			<a class="nav-link" href="{{route('login')}}">
+				<p>Iniciar Sesión</p>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="{{route('register')}}">
+				<p>Registrarse</p>
+			</a>
+		</li>
+		@endif
 
 
 
 
 <!-- 	<li class="nav-item">
-<a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+<a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim">
 	<i class="fa fa-twitter"></i>
 	<p class="hidden-lg-up">Twitter</p>
 </a>
 </li>
 <li class="nav-item">
-<a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+<a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim">
 	<i class="fa fa-facebook-square"></i>
 	<p class="hidden-lg-up">Facebook</p>
 </a>
 </li>
 <li class="nav-item">
-<a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+<a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial">
 	<i class="fa fa-instagram"></i>
 	<p class="hidden-lg-up">Instagram</p>
 </a>

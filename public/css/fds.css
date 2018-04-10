@@ -1,0 +1,10 @@
+#inicio_sesion{
+ height: 100vh;
+ background-image: url('../img/fds_bg.jpg');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-color: red;
+ background-blend-mode:color-burn;
+ color: #fff;
+}

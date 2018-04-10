@@ -2467,9 +2467,9 @@ input.datetimepicker[data-color="yellow"] + .bootstrap-datetimepicker-widget tab
   background-color: transparent;
   border: 1px solid #E3E3E3;
   border-radius: 30px;
-  color: #2c2c2c;
+  color: #fff;
   line-height: normal;
-  font-size: 0.8571em;
+  font-size: 1.2em;
   -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   -moz-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -2484,7 +2484,7 @@ input.datetimepicker[data-color="yellow"] + .bootstrap-datetimepicker-widget tab
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: 0 !important;
-  color: #2c2c2c; }
+  color: #000; }
 .form-control:focus + .input-group-text, .form-control:focus ~ .input-group-text {
   border: 1px solid #f96332;
   border-left: none;
@@ -5591,7 +5591,7 @@ Created using IcoMoon - icomoon.io
 .login-page .card-login {
   border-radius: 0.25rem;
   padding-bottom: 0.7rem;
-  max-width: 320px; }
+  max-width: 400px; }
 .login-page .card-login .btn-wd {
   min-width: 180px; }
 .login-page .card-login .logo-container {
@@ -5603,11 +5603,11 @@ Created using IcoMoon - icomoon.io
 .login-page .card-login .input-group:last-child {
   margin-bottom: 40px; }
 .login-page .card-login.card-plain .form-control::-moz-placeholder {
-  color: #ebebeb;
+  color: #fff;
   opacity: 1;
   filter: alpha(opacity=100); }
 .login-page .card-login.card-plain .form-control:-moz-placeholder {
-  color: #ebebeb;
+  color: #fff;
   opacity: 1;
   filter: alpha(opacity=100); }
 .login-page .card-login.card-plain .form-control::-webkit-input-placeholder {

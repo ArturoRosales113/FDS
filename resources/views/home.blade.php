@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Layouts.Frontend.app')
 
 @section('content')
 <div class="container">
@@ -16,6 +16,19 @@
 
                     You are logged in!
                 </div>
+                <ul>
+
+                 <li class="nav-item">
+    <a class="nav-link" href="#"
+        onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">
+        Cerrar Sesión
+    </a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
+</li>
+                </ul>
             </div>
         </div>
     </div>

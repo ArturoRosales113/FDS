@@ -1,24 +1,17 @@
-@extends('Layouts.Frontend.app')
-@section('content') @include('Layouts.Frontend.Navbars.nav_expand')
-<body class="">
-
- <div class="row d-flex align-items-center" id="inicio_sesion">
-  <div class="col-md-4 mr-auto ml-auto">
-   {!! Form::open(['route' => ['login'], 'method' => 'POST', 'class' => 'form-horizontal']) !!}
-      <h5 class="title" id="">Iniciar sesion</h5>
-      <br>
-      <div class="input-group">
-        {!!Form::text('email',null,array('class'=>'form-control','placeholder'=> 'email'))!!}
-      </div>
-      <div class="input-group">
-        {!!Form::password('password',null,array('class'=>'form-control'))!!}
-      </div>
-
-      <button type="submit" class="btn btn-info btn-fill pull-right">Iniciar Sesion</button>
-
-    {!! Form::close() !!}
+@extends('Layouts.Frontend.app') @section('content')
+<body class="login-page">
+ @include('Layouts.Frontend.Navbars.nav_expand')
+ <div class="page-header" id="inicio_sesion">
+  <div class="page-header-image"></div>
+  <div class="content-center">
+   <div class="container">
+    <div class="col-md-4 content-center">
+     <div class="card card-login card-plain">
+      @include('auth.loginForm')
+     </div>
+    </div>
+   </div>
   </div>
-</div>
-@include('Layouts.Frontend.scripts')
+ </div>
 </body>
 @endsection

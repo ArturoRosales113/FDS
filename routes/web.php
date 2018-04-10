@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('Frontend')->group(function () {
+    // Controllers Within The "App\Http\Controllers\Frontend" Namespace
+    Route::get('/home', 'IndexController@index')->name('front.index');
+    // Blog
+    Route::get('/blog', 'BlogController@blog')->name('front.blog');
+    //Contacto
+    Route::get('/contacto', 'ContactoController@contacto')->name('front.contacto');
+    //Portafolio
+    Route::get('/portafolio', 'PortafolioController@portafolio')->name('front.portafolio');
+
+    Route::get('/send_test_email','IndexController@send_email')->name('front.send_email');
+
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

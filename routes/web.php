@@ -18,8 +18,14 @@ Route::namespace('Frontend')->group(function () {
     Route::get('/carta', 'BlogController@blog')->name('front.blog');
     //Contacto
     Route::get('/contacto', 'ContactoController@contacto')->name('front.contacto');
-    
 
 });
+	//App Resources
+	Route::resource('/categories'	, 'CategoryController');
+	Route::resource('/dishes'		, 'DishController');
+	Route::resource('/orders'		, 'OrderController');
+	Route::resource('/promos'		, 'PromoController');
+	Route::resource('/reservations'	, 'ReservationController');
+	Route::resource('/tickets'		, 'TicketController');
 
 Auth::routes();

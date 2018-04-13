@@ -30,6 +30,8 @@ Route::namespace('Backend')->group(function () {
         Route::resource('/promos'		, 'PromoController');
         Route::resource('/reservations'	, 'ReservationController');
         Route::resource('/tickets'		, 'TicketController');
+        Route::resource('/users'		, 'UserController');
+        
   });
 });
 

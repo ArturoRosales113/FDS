@@ -14,7 +14,7 @@ class DishesTableSeeder extends Seeder
      */
     public function run()
     {
-    	// If Default category does not exists
+    	// If Default category doesn't exists
     	if (Category::where('name', '=', 'Default')->count() < 1) {
     		// Create Default category
 			DB::table('categories')->insert([

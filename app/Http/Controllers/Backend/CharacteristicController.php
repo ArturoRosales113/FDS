@@ -14,7 +14,7 @@ class CharacteristicController extends Controller
      */
     public function index()
     {
-        //
+        return view('Backend.Characteristic.index');//
     }
 
     /**
@@ -24,7 +24,7 @@ class CharacteristicController extends Controller
      */
     public function create()
     {
-        //
+        return view('Backend.Characteristic.create');//
     }
 
     /**
@@ -46,7 +46,7 @@ class CharacteristicController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Backend.Characteristic.show');//
     }
 
     /**
@@ -57,7 +57,7 @@ class CharacteristicController extends Controller
      */
     public function edit($id)
     {
-        //
+       return view('Backend.Characteristic.edit'); //
     }
 
     /**

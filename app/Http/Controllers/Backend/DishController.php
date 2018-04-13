@@ -14,7 +14,7 @@ class DishController extends Controller
      */
     public function index()
     {
-        //
+     return view('Backend.Dish.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        return view('Backend.Dish.create');//
     }
 
     /**
@@ -46,7 +46,7 @@ class DishController extends Controller
      */
     public function show($id)
     {
-        //
+       return view('Backend.Dish.show'); //
     }
 
     /**
@@ -57,7 +57,7 @@ class DishController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Backend.Dish.edit');//
     }
 
     /**

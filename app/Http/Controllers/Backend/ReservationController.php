@@ -14,7 +14,7 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        //
+       return view('Backend.Reservation.index'); //
     }
 
     /**
@@ -24,7 +24,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
+         return view('Backend.Reservation.create');//
     }
 
     /**
@@ -46,7 +46,7 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Backend.Reservation.show');//
     }
 
     /**
@@ -57,7 +57,7 @@ class ReservationController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Backend.Reservation.edit');//
     }
 
     /**

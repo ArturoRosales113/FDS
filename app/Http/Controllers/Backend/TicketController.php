@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class TicketController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('Backend.User.index');//
+       return view('Backend.Ticket.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('Backend.User.create');//
+       return view('Backend.Ticket.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('Backend.User.show');//
+        return view('Backend.Ticket.show');//
     }
 
     /**
@@ -57,7 +57,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('Backend.User.edit');//
+        return view('Backend.Ticket.edit');//
     }
 
     /**

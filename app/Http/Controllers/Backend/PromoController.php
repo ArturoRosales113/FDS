@@ -14,7 +14,7 @@ class PromoController extends Controller
      */
     public function index()
     {
-        //
+       return view('Backend.Promo.index'); //
     }
 
     /**
@@ -24,7 +24,7 @@ class PromoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Backend.Promo.create');//
     }
 
     /**
@@ -46,7 +46,7 @@ class PromoController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Backend.Promo.show');//
     }
 
     /**
@@ -57,7 +57,7 @@ class PromoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Backend.Promo.edit');//
     }
 
     /**

@@ -23,6 +23,7 @@ Route::namespace('Frontend')->group(function () {
 Route::namespace('Backend')->group(function () {
     Route::prefix('admin')->group(function () {
         //App Resources
+        Route::get('/', 'DashboardController@index')->name('back.index');
         Route::resource('/categories'	, 'CategoryController');
         Route::resource('/dishes'		, 'DishController');
         Route::resource('/orders'		, 'OrderController');

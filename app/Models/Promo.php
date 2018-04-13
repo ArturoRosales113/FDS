@@ -21,6 +21,6 @@ class Promo extends Model
      */
     public function dish()
     {
-        return $this->hasOne('App\Dish');
+        return $this->hasOne('App\Models\Dish');
     }
 }

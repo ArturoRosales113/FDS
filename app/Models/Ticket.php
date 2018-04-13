@@ -11,14 +11,14 @@ class Ticket extends Model
      */
     public function deliverer()
     {
-        return $this->hasOne('App\User');
+        return $this->hasOne('App\Models\User');
     }    
     /**
      * Get the user record associated with the ticket.
      */
     public function order()
     {
-        return $this->hasOne('App\Order');
+        return $this->hasOne('App\Models\Order');
     }    
 
 }

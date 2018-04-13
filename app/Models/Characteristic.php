@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,5 +11,5 @@ class Characteristic extends Model
      */
     public function dishes()
     {
-		return $this->belongsToMany('App\Dish', 'orders_dishes');
+		return $this->belongsToMany('App\Models\Dish', 'orders_dishes');
 	}}

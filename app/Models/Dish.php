@@ -11,20 +11,20 @@ class Dish extends Model
      */
     public function category()
     {
-        return $this->hasOne('App\Category');
+        return $this->belongsTo('App\Models\Category');
     }
     /**
      * Get the orders associated with the dish.
      */
     public function orders()
     {
-		return $this->belongsToMany('App\Orders', 'orders_dishes');
+		return $this->belongsToMany('App\Models\Orders', 'orders_dishes');
 	}
     /**
      * Get the characteristics associated with the dish.
      */
     public function dishes()
     {
-        return $this->belongsToMany('App\Dish', 'orders_dishes');
+        return $this->belongsToMany('App\Models\Dish', 'orders_dishes');
     }
 }

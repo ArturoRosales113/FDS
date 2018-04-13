@@ -10,4 +10,11 @@ class Profile extends Model
     {
         return $this->belongsTo('App\User');
     }
+     /**
+     * Get all of the post's comments.
+     */
+    public function addresses()
+    {
+        return $this->morphMany('App\Addresses', 'addressable');
+    }
 }

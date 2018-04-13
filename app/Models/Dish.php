@@ -14,10 +14,17 @@ class Dish extends Model
         return $this->hasOne('App\Category');
     }
     /**
-     * Get the dishes associated with the Order.
+     * Get the orders associated with the dish.
      */
     public function orders()
     {
 		return $this->belongsToMany('App\Orders', 'orders_dishes');
 	}
+    /**
+     * Get the characteristics associated with the dish.
+     */
+    public function dishes()
+    {
+        return $this->belongsToMany('App\Dish', 'orders_dishes');
+    }
 }

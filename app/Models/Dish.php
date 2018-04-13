@@ -23,8 +23,8 @@ class Dish extends Model
     /**
      * Get the characteristics associated with the dish.
      */
-    public function dishes()
+    public function characteristics()
     {
-        return $this->belongsToMany('App\Models\Dish', 'orders_dishes');
+        return $this->belongsToMany('App\Models\Characteristic', 'characteristics_dishes');
     }
 }

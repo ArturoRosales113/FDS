@@ -12,11 +12,10 @@
        {!! Form::text('name',old('name'),array('class' => 'form-control')) !!}
       </div>
      </div>
-     <div class="col-md-6">
-   <label for="">Selecciona una categoría</label>
-      <div class="btn-group bootstrap-select">
-
-       <select class="selectpicker" name"category_id" data-size="7" data-style="btn btn-info btn-round" title="Single Select" tabindex="-98">
+     <div class="col-md-3">
+      <div class="btn-group bootstrap-select form-group">
+       <label for="">Selecciona una categoría</label>
+       <select class="selectpicker" name"category_id" data-size="7" data-style="btn btn-info" title="Single Select" tabindex="-98">
          <option class="bs-title-option" selected="" value="null">Categorías</option>
          @foreach ($categories as $cat)
           <option value="{{ $cat -> id }}">{{ $cat -> name}}</option>

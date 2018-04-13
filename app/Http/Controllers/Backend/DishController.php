@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+Use App\Models\Dish;
+Use App\Models\Category;
 class DishController extends Controller
 {
     /**
@@ -14,7 +15,11 @@ class DishController extends Controller
      */
     public function index()
     {
-     return view('Backend.Dish.index');
+     $dishes = Dish::all();
+
+     return view('Backend.Dish.index', [
+      'dishes' => $dishes
+     ]);
     }
 
     /**
@@ -24,7 +29,10 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view('Backend.Dish.create');//
+        $categories = Category::all();
+        return view('Backend.Dish.create', [
+         'categories' => $categories
+        ]);//
     }
 
     /**

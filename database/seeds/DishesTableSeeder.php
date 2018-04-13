@@ -29,7 +29,7 @@ class DishesTableSeeder extends Seeder
         // Use Default category
         $cat = Category::where('name', '=', 'Default')->firstOrFail();
         // Create $i dishes
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=0; $i < 10; $i++) {
         	// Create random price
         	$price = (mt_rand() / mt_getrandmax())*100;
 	   		DB::table('dishes')->insert([
@@ -41,7 +41,7 @@ class DishesTableSeeder extends Seeder
 	            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 	            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
-        	]);        
+        	]);
 	   	}
     }
 }

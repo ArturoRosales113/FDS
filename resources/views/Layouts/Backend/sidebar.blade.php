@@ -25,12 +25,18 @@
 
         <div class="user">
             <div class="photo">
-                <img src="../assets/img/james.jpg">
+                @if (isset(Auth::user()->profile))
+                  @if (Auth::user()->profile->img_path != null)
+                   <img src="{{url(Auth::user()->profile->img_path)}}">
+                  @endif
+                 @else
+                  <img src="{{url('img/default-profile.png')}}">
+                @endif
             </div>
             <div class="info">
                 <a data-toggle="collapse" href="#collapseExample" class="collapsed">
                     <span>
-                        James Amos
+                        {{Auth::user()->name}}
                         <b class="caret"></b>
                     </span>
                 </a>
@@ -38,22 +44,27 @@
                 <div class="collapse" id="collapseExample">
                     <ul class="nav">
                         <li>
-                            <a href="#">
+                            <a href="{{route('users.show', Auth::user()->id) }}">
                                 <span class="sidebar-mini-icon">MP</span>
-                                <span class="sidebar-normal">My Profile</span>
+                                <span class="sidebar-normal">Mi Perfil</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('users.edit', Auth::user()->id) }}">
                                 <span class="sidebar-mini-icon">EP</span>
-                                <span class="sidebar-normal">Edit Profile</span>
+                                <span class="sidebar-normal">Editar Perfil</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <span class="sidebar-mini-icon">S</span>
-                                <span class="sidebar-normal">Settings</span>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                <span class="sidebar-mini-icon"><i class="fa fa-times"></i></span>
+                                <span class="sidebar-normal">Cerrar sesion</span>
                             </a>
+
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
                         </li>
                     </ul>
                 </div>
@@ -138,9 +149,15 @@
                         <ul class="nav">
 
                           <li>
-                              <a href="{{route('tickets.index')}}">
+                              <a href="{{route('dishes.index')}}">
                                   <span class="sidebar-mini-icon"><i class="fa fa-utensils"></i></span>
                                   <span class="sidebar-normal"> Todos los platillos</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{route('categories.index')}}">
+                                  <span class="sidebar-mini-icon"><i class="fa fa-certificate"></i></span>
+                                  <span class="sidebar-normal"> Todas las categorias</span>
                               </a>
                           </li>
 

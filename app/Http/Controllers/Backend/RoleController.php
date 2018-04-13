@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class PromoController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.

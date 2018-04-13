@@ -16,4 +16,11 @@ class Promo extends Model
  protected $fillable = [
      'dish_id', 'content', 'code',
  ];
+ 	/**
+     * Get the dish associated with the Promo.
+     */
+    public function dish()
+    {
+        return $this->hasOne('App\Dish');
+    }
 }

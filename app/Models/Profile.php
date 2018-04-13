@@ -4,11 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Profile extends Model
 {
     public function user()
     {
         return $this->belongsTo('App\User');
     }
-}
 }

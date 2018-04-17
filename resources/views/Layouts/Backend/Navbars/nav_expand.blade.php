@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-absolute bg-primary fixed-top navbar-transparent">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent">
 	<div class="container-fluid">
     <div class="navbar-wrapper">
 			<div class="navbar-toggle">
@@ -17,7 +17,7 @@
 			<span class="navbar-toggler-bar navbar-kebab"></span>
 		</button>
 
-	    <div class="navbar-collapse justify-content-end collapse show" id="navigation" style="">
+	    <div class="navbar-collapse justify-content-end collapse" id="navigation" style="">
 
 
           <form>

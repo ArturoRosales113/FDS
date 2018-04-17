@@ -53,13 +53,10 @@
         <td class="text-right">
           <a href="{{ route('dishes.show', $dish -> id) }}" rel="tooltip" class="btn btn-success btn-icon btn-sm   btn-neutral  " data-original-title="Ver" title="Ver"><i class="fa fa-search"></i></a>
          <a href="{{ route('dishes.edit', $dish -> id) }}" rel="tooltip" class="btn btn-info btn-icon btn-sm   btn-neutral  " data-original-title="Editar" title="Editar"><i class="fa fa-edit"></i></a>
-         <a href="#!" rel="tooltip" class="btn btn-danger btn-icon btn-sm   btn-neutral  " data-original-title="Eliminar" title="Eliminar" onclick="event.preventDefault();document.getElementById('delete_{{ $dish -> id }}').submit();">
-         <i class="fa fa-times"></i>
-        </a>
-         <form id="delete_{{ $dish -> id }}" action="{{ route('dishes.destroy', $dish -> id) }}" method="DELETE" style="display: none;">
-             {{ csrf_field() }}
-         </form>
-
+            {{ Form::open(array('url' => 'admin/dishes/' . $dish->id, 'class' => 'pull-right hidden')) }}
+                {{ Form::hidden('_method', 'DELETE') }}
+                {{ Form::button(' <i class="fa fa-times"></i>', array('type' => 'submit','class' => 'btn btn-danger btn-icon btn-sm btn-neutral','rel' => 'tooltip','data-original-title' => 'Eliminar', 'title' => 'Eliminar')) }}
+            {{ Form::close() }}
         </td>
        </tr>
       @endforeach
@@ -69,3 +66,5 @@
   </div>
  </div>
 </div>
+
+

@@ -4,5 +4,6 @@
 {!! Html::style('css/now_ui_dashboard.css') !!}
 <!-- Font Awesome -->
 {!! Html::style('css/fontawesome-all.min.css') !!}
+{!! Html::style('css/bootstrap-imageupload.min.css') !!}
 <!-- FDS -->
 {!! Html::style('css/fds.css') !!}

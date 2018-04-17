@@ -15,7 +15,7 @@
 <!-- Bootstrap selectpicker -->
 {!! Html::script('js/plugins/bootstrap-selectpicker.js') !!}
 <!-- Bootstrapdatetimepicker -->
-{!! Html::script('js/plugins/bootstrap-datetimepicker.js') !!}
+{!! Html::script('js/plugins/bootstrap-datetimepicker.min.js') !!}
 <!-- Bootstrap dataTable -->
 {!! Html::script('js/plugins/jquery.dataTables.min.js') !!}
 <!-- Bootstrap jasny --><!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
@@ -30,8 +30,7 @@
 {!! Html::script('js/presentation-page/jquery.sharrre.js') !!}
 <!-- Dashboard -->
 {!! Html::script('js/now-ui-dashboard.min.js') !!}
-<!-- Demos Dash -->
-{!! Html::script('js/demo_dash.js') !!}
+
 <script>
   $(document).ready(function(){
     $().ready(function(){

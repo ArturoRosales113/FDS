@@ -8,7 +8,7 @@
 					<span class="navbar-toggler-bar bar3"></span>
 				</button>
 			</div>
-			<a class="navbar-brand" href="#pablo"><img src="{{url('img/Logo_TV_2015.png')}}" alt="" height="40px"></a>
+
 		</div>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="true" aria-label="Toggle navigation">

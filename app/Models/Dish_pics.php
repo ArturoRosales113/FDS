@@ -11,5 +11,6 @@ class Dish_pics extends Model
      */
     public function dish()
     {
-        return $this->hasOne('App\Models\Dish');
-    }}
+        return $this->belongsTo('App\Models\Dish');
+    }
+ }

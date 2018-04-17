@@ -27,4 +27,8 @@ class Dish extends Model
     {
         return $this->belongsToMany('App\Models\Characteristic', 'characteristics_dishes');
     }
+    public function dish_pics()
+    {
+        return $this->hasMany('App\Models\Dish_pics');
+    }
 }

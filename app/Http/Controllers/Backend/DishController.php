@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-Use App\Models\Dish;
-Use App\Models\Category;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+Use App\Models\Dish;
+Use App\Models\Category;
+Use App\Models\Dish_pic;
+use Illuminate\Http\File;
 
 class DishController extends Controller
 {
@@ -65,13 +67,12 @@ class DishController extends Controller
             ->withInput(Input::all());
         } else {
             $dish = new Dish;
-
             if (is_numeric(Input::get('category_id'))) {        // If given category_id is a number, we use it
                 $dish->category_id = Input::get('category_id'); 
             } else {                                            // Else, we use the Default category
                 $def = Category::where('name', '=', 'Default')->firstOrFail(); // Find Default category_id
                 $dish->category_id = $def->id;
-            }           
+            }   
             // store
             $dish->name       = Input::get('name');
             $dish->description      = Input::get('description');
@@ -79,10 +80,28 @@ class DishController extends Controller
             $dish->available = $request->has('available'); // If available exists is True, if not is False
             $dish->save();
 
-            // redirect
-            Session::flash('message', 'Platillo creado con éxito!');
-            return Redirect::to('admin/dishes/');
+            //dd(Input::all());
+            //dd(Input::has('dishphoto'));
+            //dd($data['dishphoto']);
+                        
+            $data = $request->all();
+            if ($data['dishphoto']) {
+                foreach($data['dishphoto'] as $photo) {
+                    //dd($photo);
+                    $path = $photo->store('img/dishphotos');
+                    $dp = new Dish_pic;
+                    $dp->dish_id = $dish->id;
+                    $dp->img_path = $path;
+                    $dp->enabled = True;
+                    $dp->save();
+                    //dd($path);
+                }
+            }
         }
+        
+        // redirect
+        Session::flash('message', 'Platillo creado con éxito!');
+        return Redirect::to('admin/dishes/');
     }
 
     /**
@@ -94,7 +113,7 @@ class DishController extends Controller
     public function show($id)
     {
        return view('Backend.Dish.show'); //
-    }
+   }
 
     /**
      * Show the form for editing the specified resource.
@@ -109,7 +128,7 @@ class DishController extends Controller
 
         // show the edit form and pass the dish
         return View::make('Backend.Dish.edit')
-            ->with('dish', $dish);
+        ->with('dish', $dish);
     }
 
     /**
@@ -135,8 +154,8 @@ class DishController extends Controller
         // process the login
         if ($validator->fails()) {
             return Redirect::to('admin/dishes/' . $id . '/edit')
-                ->withErrors($validator)
-                ->withInput(Input::all());
+            ->withErrors($validator)
+            ->withInput(Input::all());
         } else {
             // store
             $dish = Dish::find($id);
@@ -168,4 +187,4 @@ class DishController extends Controller
         // redirect
         Session::flash('message', 'Platillo eliminado con éxito!');
         return Redirect::to('admin/dishes');    }
-}
+    }

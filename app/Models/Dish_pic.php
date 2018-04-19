@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Dish_pics extends Model
+class Dish_pic extends Model
 {
  	/**
      * Get the dish associated with the picture.
@@ -13,4 +13,4 @@ class Dish_pics extends Model
     {
         return $this->belongsTo('App\Models\Dish');
     }
- }
+}

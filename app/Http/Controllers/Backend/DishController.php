@@ -64,11 +64,17 @@ class DishController extends Controller
             ->withErrors($validator)
             ->withInput(Input::all());
         } else {
-            // store
             $dish = new Dish;
+
+            if (is_numeric(Input::get('category_id'))) {        // If given category_id is a number, we use it
+                $dish->category_id = Input::get('category_id'); 
+            } else {                                            // Else, we use the Default category
+                $def = Category::where('name', '=', 'Default')->firstOrFail(); // Find Default category_id
+                $dish->category_id = $def->id;
+            }           
+            // store
             $dish->name       = Input::get('name');
             $dish->description      = Input::get('description');
-            $dish->category_id = Input::get('category_id');
             $dish->price = Input::get('price');
             $dish->available = $request->has('available'); // If available exists is True, if not is False
             $dish->save();
@@ -115,7 +121,7 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
-// validate
+        // validate
         // read more on validation at http://laravel.com/docs/validation
         $rules = array(
             'name'       => 'required',
@@ -139,13 +145,12 @@ class DishController extends Controller
             $dish->category_id = Input::get('category_id');
             $dish->price = Input::get('price');
             $dish->available = $request->has('available'); // If available exists is True, if not is False
-            $dish->save();
-
-
-            // redirect
-            Session::flash('message', 'Platillo modificado con éxito!');
-            return Redirect::to('admin/dishes');
         }
+        $dish->save();
+
+        // redirect
+        Session::flash('message', 'Platillo modificado con éxito!');
+        return Redirect::to('admin/dishes');
     }
 
     /**
